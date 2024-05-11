@@ -24,15 +24,23 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install a VS Code extension:
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
-# RUN code-server --install-extension esbenp.prettier-vscode
+RUN code-server --install-extension esbenp.prettier-vscode
 
 # Install apt packages:
-# RUN sudo apt-get install -y ubuntu-make
+RUN sudo apt-get install -y ubuntu-make
 
 # Copy files: 
-# COPY deploy-container/myTool /home/coder/myTool
+COPY deploy-container/myTool /home/coder/myTool
 
 # -----------
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
+RUN sudo apt-get install -y nodejs
+
+RUN curl https://rclone.org/install.sh | sudo bash
+RUN rclone config
+
+RUN cat $(rclone config file | sed -n 2p) | base64 --wrap=0 # Linux
+RUN cat $(rclone config file | sed -n 2p) | base64 --b 0 # MacOS
 
 # Port
 ENV PORT=8080
