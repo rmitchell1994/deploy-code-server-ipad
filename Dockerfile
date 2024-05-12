@@ -34,8 +34,9 @@ COPY deploy-container/myTool /home/coder/myTool
 
 # -----------
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -
-RUN sudo apt-get install -y nodejs yarn nginx git
+RUN sudo apt-get install -y nodejs yarn nginx git doppler
 
+RUN yarn global add nx@latest
 # Port
 ENV PORT=8080
 
