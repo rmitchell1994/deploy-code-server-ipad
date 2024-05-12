@@ -33,8 +33,8 @@ RUN code-server --install-extension esbenp.prettier-vscode
 COPY deploy-container/myTool /home/coder/myTool
 
 # -----------
-RUN curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
-RUN apt-get install -y nodejs
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -
+RUN sudo apt-get install -y nodejs yarn nginx git
 
 # Port
 ENV PORT=8080
