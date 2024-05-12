@@ -38,7 +38,11 @@ RUN echo "deb [signed-by=/usr/share/keyrings/doppler-archive-keyring.gpg] https:
 
 # -----------
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -
-RUN sudo apt-get install -y nodejs yarn nginx git doppler
+RUN sudo apt-get install -y nodejs 
+RUN sudo apt-get install -y yarn 
+RUN sudo apt-get install -y nginx 
+RUN sudo apt-get install -y git 
+RUN sudo apt-get install -y doppler
 
 RUN yarn global add nx@latest
 # Port
