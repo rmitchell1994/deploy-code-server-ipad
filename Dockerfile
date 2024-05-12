@@ -38,10 +38,9 @@ RUN echo "deb [signed-by=/usr/share/keyrings/doppler-archive-keyring.gpg] https:
 
 # -----------
 RUN sudo curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -
-RUN sudo apt-get install -y nodejs 
-RUN sudo apt-get install -y yarn 
-RUN sudo apt-get install -y git 
-RUN sudo apt-get install -y doppler
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN sudo apt-get install -y nodejs yarn git doppler
 
 # Port
 ENV PORT=8080
