@@ -43,7 +43,6 @@ RUN sudo apt-get install -y yarn
 RUN sudo apt-get install -y git 
 RUN sudo apt-get install -y doppler
 
-RUN yarn global add nx@latest
 # Port
 ENV PORT=8080
 
