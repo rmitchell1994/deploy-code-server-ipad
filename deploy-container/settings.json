@@ -1,7 +1,19 @@
 {
-  "workbench.colorTheme": "Default Dark+",
-  "git.postCommitCommand": "sync",
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  "git.autofetch": true
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.formatOnSave": true,
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit"
+        },
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
